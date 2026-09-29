@@ -45,8 +45,8 @@ Here, `u(k)` is known, `d(k)` is unknown, and `r` is a nonnegative integer delay
 The design tests the geometric condition
 
 $$
-\mathscr I_r\subseteq\ker Q,\qquad
-\mathscr I_r=\mathscr W_{g,r}^{\ast}\cap\ker\bar C_r.
+\mathscr{I}_r\subseteq\ker Q,\qquad
+\mathscr{I}_r=\mathscr W_{g,r}^{\ast}\cap\ker\bar C_r.
 $$
 
 `g.I` contains a basis of the ambiguity subspace $\mathscr I_r$. For a feasible target, the returned recovery maps satisfy
