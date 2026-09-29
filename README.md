@@ -4,9 +4,9 @@ This repository contains the [`simulation parameters`](Simulation_parameters_for
 
 **Design a fixed-delay functional unknown-input observer using geometric quotient spaces.**
 
-`delayed_uio_design` is an **offline design function**. It computes geometric subspaces, quotient-coordinate maps, a stabilizing output injection (a *friend*), and target recovery maps. It returns the matrices needed to implement an observer; it does **not** acquire measurements, run a simulation, or generate plots itself.
+`delayed_uio_design` is an **offline design function**. It computes geometric subspaces, quotient-coordinate maps, a stabilizing output injection (a *friend*), and target recovery maps. It returns the matrices needed to implement the observer.
 
-Source: [`delayed_uio_design.m`](delayed_uio_design.m). Place this README next to that file in the repository. All helper functions required by the designer are local functions in the same `.m` file.
+Source: [`delayed_uio_design.m`](delayed_uio_design.m).
 
 ## Contents
 
