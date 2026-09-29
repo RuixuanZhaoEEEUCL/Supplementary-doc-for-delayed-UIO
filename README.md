@@ -1,5 +1,5 @@
 # Supplementary-doc-for-delayed-UIO
-This repository contains the simulation parameters of "Finite-delayed State Reconstruction with Unknown Inputs via Geometric Quotient Outputs" and the MATLAB function of the numerical calculation algorithms 
+This repository contains the [`simulation parameters`](Simulation_parameters_for_case_study.pdf) of "Finite-delayed State Reconstruction with Unknown Inputs via Geometric Quotient Outputs" and the MATLAB function of the numerical calculation algorithms 
 # delayed_uio_design
 
 **Design a fixed-delay functional unknown-input observer using geometric quotient spaces.**
