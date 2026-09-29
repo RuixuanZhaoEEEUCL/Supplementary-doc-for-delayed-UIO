@@ -569,11 +569,11 @@ The implementation follows six stages.
 
 1. **Horizon output-nulling spaces.** Compute
    
-   $$
+   $
    \mathscr V_0=\ker C,\qquad
    \mathscr V_{j+1}=\ker C\cap A^{-1}
    (\mathscr V_j+\operatorname{Im}\bar B)
-   $$
+   $
    
    until stationarity. Here $A^{-1}$ means a subspace preimage, not a matrix inverse. Select $\mathscr V_r$ and construct its quotient-coordinate map `Cbar`.
 
@@ -585,11 +585,11 @@ The implementation follows six stages.
 
 5. **Stabilization on the assignable quotient.** Design `Lassign` only on `X/S`, then lift it through `PS'`:
    
-   $$
+   $
    L=L_{\mathrm{base}}+P_S^{\mathsf T}L_{\mathrm{assign}}P_Y,
    \qquad
    A_e=P_g(A+L\bar C_r)P_g^{\mathsf T}.
-   $$
+   $
    
    The implementation uses the **plus-sign convention** `A + L*Cbar`. With pole placement, `Lassign = -place(Aassign',Cassign',poles)'`. Stable fixed modes remain fixed; the bad fixed component is removed in the quotient construction.
 
@@ -597,10 +597,10 @@ The implementation follows six stages.
 
 For a runnable design, with $\varepsilon_r(k)=P_gx(k-r)-z_r(k)$, the intended exact-arithmetic identities are
 
-$$
+$
 \varepsilon_r(k+1)=A_e\varepsilon_r(k),\qquad
 Qx(k-r)-\widehat q(k)=E\varepsilon_r(k).
-$$
+$
 
 ## Numerical Considerations
 
@@ -641,4 +641,4 @@ Do not compare `Qhat(:,k+1)` with `Q*X(:,k+1)` when `r > 0`; compare it with `Q*
 
 ### Source and documentation scope
 
-This page documents the accompanying `delayed_uio_design.m`, including its implemented defaults, numerical decisions, and return fields. The examples are usage illustrations, not captured MATLAB session output or a claim of cross-release testing. The MATLAB source is unchanged by this documentation.
+This page documents the accompanying `delayed_uio_design.m`, including its implemented defaults, numerical decisions, and return fields. 
