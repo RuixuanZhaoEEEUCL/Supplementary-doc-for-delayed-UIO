@@ -568,7 +568,7 @@ Each algebraic residual is the Frobenius norm divided by `max(1,scale)`, with th
 The implementation follows six stages.
 
 1. **Horizon output-nulling spaces.** Compute
-   
+
    $$
    \mathscr V_0=\ker C,\qquad
    \mathscr V_{j+1}=\ker C\cap A^{-1}
@@ -577,14 +577,14 @@ The implementation follows six stages.
    
    until stationarity. Here $A^{-1}$ means a subspace preimage, not a matrix inverse. Select $\mathscr V_r$ and construct its quotient-coordinate map `Cbar`.
 
-2. **Window realization.** Build the initial-state, known-input, and unknown-input response matrices. Quotient out the unknown-input output subspace and construct `J`, `Jleft`, and `Hwindow`.
+1. **Window realization.** Build the initial-state, known-input, and unknown-input response matrices. Quotient out the unknown-input output subspace and construct `J`, `Jleft`, and `Hwindow`.
 
-3. **Conditioned-invariant and unobservability spaces.** Compute `W` from the increasing recursion starting at zero, and `S` from the decreasing recursion starting at the full state space. Construct `PW` and `PS` from the final bases.
+2. **Conditioned-invariant and unobservability spaces.** Compute `W` from the increasing recursion starting at zero, and `S` from the decreasing recursion starting at the full state space. Construct `PW` and `PS` from the final bases.
 
-4. **Fixed spectral decomposition.** Construct `Lbase` and `Af`. Use ordered real Schur decompositions to obtain the bad and good invariant subspaces separately. Lift the bad directions to form `Wg`, and intersect with `ker(Cbar)` to obtain `I`.
+3. **Fixed spectral decomposition.** Construct `Lbase` and `Af`. Use ordered real Schur decompositions to obtain the bad and good invariant subspaces separately. Lift the bad directions to form `Wg`, and intersect with `ker(Cbar)` to obtain `I`.
 
-5. **Stabilization on the assignable quotient.** Design `Lassign` only on `X/S`, then lift it through `PS'`:
-   
+4. **Stabilization on the assignable quotient.** Design `Lassign` only on `X/S`, then lift it through `PS'`:
+
    $$
    L=L_{\mathrm{base}}+P_S^{\mathsf T}L_{\mathrm{assign}}P_Y,
    \qquad
@@ -593,7 +593,7 @@ The implementation follows six stages.
    
    The implementation uses the **plus-sign convention** `A + L*Cbar`. With pole placement, `Lassign = -place(Aassign',Cassign',poles)'`. Stable fixed modes remain fixed; the bad fixed component is removed in the quotient construction.
 
-6. **Target recovery and verification.** Test the inclusion using `Q*I`. For a feasible target, split `Q*pinv([Pg; Cbar])` into `E` and `F`, using the implementation's singular-value threshold. Verify the defining identities before returning the result.
+5. **Target recovery and verification.** Test the inclusion using `Q*I`. For a feasible target, split `Q*pinv([Pg; Cbar])` into `E` and `F`, using the implementation's singular-value threshold. Verify the defining identities before returning the result.
 
 For a runnable design, with $\varepsilon_r(k)=P_gx(k-r)-z_r(k)$, the intended exact-arithmetic identities are
 
