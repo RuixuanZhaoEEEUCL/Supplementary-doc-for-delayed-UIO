@@ -35,7 +35,9 @@ $$
 and designs an estimate of the prescribed linear quantity
 
 $$
-\widehat q(k)\approx Qx(k-r),\qquad k\geq r.
+    \lim_{k\to\infty}
+    \|Qx(k-r)-\widehat q_r(k)\|
+    =0,\qquad k\geq r.
 $$
 
 Here, `u(k)` is known, `d(k)` is unknown, and `r` is a nonnegative integer delay **in samples**. An estimate produced at sample `k` concerns the state at sample `k-r`. The function has no sampling-time argument; with sampling period `Ts`, the physical delay is `r*Ts`.
